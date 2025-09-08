@@ -1,17 +1,15 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './components/Navbar';
-import Footer from './components/Footer';
-import Home from './pages/Home';
-import Products from './pages/Products';
-import About from './pages/About';
-import Contact from './pages/Contact';
-import FAQ from './pages/FAQ';
-import './App.css';
+
+
+// Dynamically set basename for Router based on environment
+const getBaseName = () => {
+  // If VITE_BASE env is set (from Vite config), use it; otherwise, default to ''
+  // import.meta.env.BASE_URL is set by Vite automatically
+  return import.meta.env.BASE_URL || '';
+};
 
 function App() {
   return (
-    <Router basename="/patternia-website">
+    <Router basename={getBaseName()}>
       <div className="App">
         <Navbar />
         <main>
