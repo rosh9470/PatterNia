@@ -1,0 +1,118 @@
+/* Home Page Specific Styles */
+
+/* Hero Logo Styling */
+.hero-logo {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+/* CTA Section */
+.cta-section {
+  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  color: white;
+}
+
+.cta-content h2 {
+  color: white;
+  margin-bottom: 1.5rem;
+  font-size: 2.5rem;
+}
+
+.cta-content p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 1.1rem;
+  max-width: 600px;
+  margin: 0 auto 2rem;
+  line-height: 1.6;
+}
+
+.cta-buttons {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.cta-buttons .btn {
+  background-color: white;
+  color: var(--primary-color);
+  font-weight: 600;
+}
+
+.cta-buttons .btn:hover {
+  background-color: var(--accent-color);
+  transform: translateY(-2px);
+}
+
+.cta-buttons .btn-secondary {
+  background-color: transparent;
+  color: white;
+  border-color: white;
+}
+
+.cta-buttons .btn-secondary:hover {
+  background-color: white;
+  color: var(--primary-color);
+}
+
+/* Mobile responsiveness for homepage */
+@media (max-width: 768px) {
+  .hero-logo {
+    min-height: 80px;
+    margin-bottom: 1.5rem;
+  }
+  
+  .hero-description {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+    padding: 0 1rem;
+  }
+  
+  .hero-cta {
+    padding: 0 1rem;
+  }
+}
+
+/* Enhanced fade-in animation for value items */
+.value-item.fade-in {
+  animation-delay: 0.1s;
+}
+
+.value-item:nth-child(2).fade-in {
+  animation-delay: 0.2s;
+}
+
+.value-item:nth-child(3).fade-in {
+  animation-delay: 0.3s;
+}
+
+.value-item:nth-child(4).fade-in {
+  animation-delay: 0.4s;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .cta-content h2 {
+    font-size: 2rem;
+  }
+  
+  .cta-content p {
+    font-size: 1rem;
+  }
+  
+  .cta-buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .cta-buttons .btn {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cta-content h2 {
+    font-size: 1.75rem;
+  }
+}

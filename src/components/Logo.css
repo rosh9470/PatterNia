@@ -1,0 +1,247 @@
+/* Logo Component Styles */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo-image {
+  object-fit: contain;
+  border: none;
+  box-shadow: none;
+  border-radius: 0;
+  /* PNG transparency optimization */
+  image-rendering: auto;
+  /* Force complete transparency */
+  background: none !important;
+  background-color: transparent !important;
+  /* Ensure no anti-aliasing issues */
+  image-rendering: -webkit-optimize-contrast;
+}
+
+.logo-text-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo-text {
+  font-weight: 700;
+  color: var(--primary-color);
+  letter-spacing: -0.5px;
+  line-height: 1;
+  /* Stylized text effect */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+  background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.logo-tagline {
+  color: var(--text-light);
+  font-style: italic;
+  margin-top: -2px;
+  /* Enhanced tagline styling */
+  font-family: 'Georgia', 'Times New Roman', serif;
+  font-weight: 400;
+  opacity: 0.8;
+}
+
+/* Size variations */
+.logo-container.small .logo-image {
+  height: 30px;
+  width: auto;
+  max-width: 120px;
+}
+
+.logo-container.small .logo-text {
+  font-size: 1.2rem;
+}
+
+.logo-container.small .logo-tagline {
+  font-size: 0.6rem;
+}
+
+.logo-container.medium .logo-image {
+  height: 45px;
+  width: auto;
+  max-width: 180px;
+}
+
+.logo-container.medium .logo-text {
+  font-size: 1.8rem;
+}
+
+.logo-container.medium .logo-tagline {
+  font-size: 0.7rem;
+}
+
+.logo-container.large .logo-image {
+  height: 60px;
+  width: auto;
+  max-width: 240px;
+}
+
+.logo-container.large .logo-text {
+  font-size: 2.5rem;
+}
+
+.logo-container.large .logo-tagline {
+  font-size: 0.9rem;
+}
+
+.logo-container.hero .logo-image {
+  height: 80px;
+  width: auto;
+  max-width: 320px;
+}
+
+.logo-container.hero .logo-text {
+  font-size: 3.5rem;
+}
+
+.logo-container.hero .logo-tagline {
+  font-size: 1.1rem;
+}
+
+/* Text-only variant */
+.logo-text-only .brand-name {
+  font-weight: 700;
+  color: var(--primary-color);
+  font-size: 1.5rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .logo-container.large .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-container.large .logo-text {
+    font-size: 2rem;
+  }
+
+  .logo-container.large .logo-tagline {
+    font-size: 0.8rem;
+  }
+
+  .logo-container.hero .logo-image {
+    width: 60px;
+    height: 60px;
+  }
+
+  .logo-container.hero .logo-text {
+    font-size: 2.5rem;
+  }
+
+  .logo-container.hero .logo-tagline {
+    font-size: 1rem;
+  }
+}
+
+/* Navbar specific adjustments */
+.navbar-logo .logo-container {
+  padding: 0.5rem 0;
+  height: auto;
+}
+
+.navbar-logo .logo-text {
+  /* Fallback for browsers that don't support background-clip */
+  color: var(--primary-color);
+}
+
+/* Special navbar layout for image-only logos */
+.navbar-logo .logo-container.logo-image-only {
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.navbar-logo .logo-container.logo-image-only .logo-text-container {
+  text-align: left;
+}
+
+/* Make navbar logo appropriately sized and prevent cutting */
+.navbar-logo .logo-container.logo-image-only .logo-image {
+  width: 120px !important;
+  height: auto !important;
+  max-width: none !important;
+  max-height: 40px !important;
+}
+
+.navbar-logo .logo-container.logo-image-only .logo-tagline {
+  font-size: 0.55rem !important;
+  white-space: nowrap;
+}
+
+/* Image-only logo styling (uses the stylized text from the image) */
+.logo-container.logo-image-only {
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  /* Ensure no overflow cutting */
+  width: auto;
+  height: auto;
+  overflow: visible;
+}
+
+.logo-container.logo-image-only .logo-image {
+  /* Make image larger since it contains the text */
+  height: auto;
+  width: auto;
+  /* Remove ALL styling that could interfere */
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  background: none !important;
+  background-color: transparent !important;
+  padding: 0;
+  margin: 0;
+  /* Let the image size itself naturally */
+  max-height: none;
+  max-width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.logo-container.logo-image-only .logo-text-container {
+  align-items: center;
+  text-align: center;
+}
+
+.logo-container.logo-image-only.small .logo-image {
+  width: 150px;
+  height: auto;
+}
+
+.logo-container.logo-image-only.medium .logo-image {
+  width: 200px;
+  height: auto;
+}
+
+.logo-container.logo-image-only.large .logo-image {
+  width: 280px;
+  height: auto;
+}
+
+.logo-container.logo-image-only.hero .logo-image {
+  width: 350px;
+  height: auto;
+}
+
+@media (max-width: 480px) {
+  .logo-container.hero .logo-image {
+    width: 50px;
+    height: 50px;
+  }
+
+  .logo-container.hero .logo-text {
+    font-size: 2rem;
+  }
+
+  .logo-container.hero .logo-tagline {
+    font-size: 0.9rem;
+  }
+}
